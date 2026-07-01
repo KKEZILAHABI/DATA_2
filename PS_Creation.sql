@@ -42,4 +42,56 @@ CREATE TABLE IF NOT EXISTS goals_raw (
     timestamp timestamp
 );
 
+-- =====================================SERVICE A SCHEMA DEFINITON===========================================================================================================
+create database svs_a;
+create schema svs_a_s;
+set search_path to svs_a_s;
+CREATE TABLE IF NOT EXISTS svs_a_evnts (
+    event_id UUID,
+    user_id int,
+    event_type varchar,
+    platform varchar,
+    amount Float,
+    timestamp timestamp 
+);
+
+-- =====================================AUTHS SCHEMA DEFINITON===========================================================================================================
+create database auth;
+create schema auth_s;
+set search_path to auth_s;
+CREATE TABLE IF NOT EXISTS aut_t (
+    event_id UUID,
+    user_id Int,
+    action varchar,
+    device_os varchar,
+    timestamp timestamp
+);
+
+-- =====================================TRANSACTIONS SCHEMA DEFINITON===========================================================================================================
+create database trxns;
+create schema trxns_s;
+set search_path to trxns_s;
+CREATE TABLE IF NOT EXISTS trxns_t (
+    event_id UUID,
+    user_id Int,
+    action varchar,
+    device_os varchar,
+    timestamp timestamp
+);
+
+-- =====================================GOALS SCHEMA DEFINITON===========================================================================================================
+create database goals;
+create schema goals_s;
+set search_path to goals_s;
+CREATE TABLE IF NOT EXISTS goals_t (
+    event_id UUID,
+    user_id Int,
+    action varchar,
+    device_os varchar,
+    timestamp timestamp
+);
+
+
+
+
 

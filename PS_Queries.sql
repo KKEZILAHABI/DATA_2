@@ -25,3 +25,5 @@ FROM
     FROM service_a_events
 )
 ORDER BY row_count DESC;
+
+select * from auth_logs_raw limit 10
