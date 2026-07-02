@@ -67,15 +67,17 @@ CREATE TABLE IF NOT EXISTS aut_t (
     timestamp timestamp
 );
 
+
 -- =====================================TRANSACTIONS SCHEMA DEFINITON===========================================================================================================
 create database trxns;
 create schema trxns_s;
 set search_path to trxns_s;
 CREATE TABLE IF NOT EXISTS trxns_t (
-    event_id UUID,
+    transaction_id UUID,
     user_id Int,
-    action varchar,
-    device_os varchar,
+    amount Float,
+    transaction_type varchar,
+    status varchar,
     timestamp timestamp
 );
 
@@ -84,13 +86,13 @@ create database goals;
 create schema goals_s;
 set search_path to goals_s;
 CREATE TABLE IF NOT EXISTS goals_t (
-    event_id UUID,
-    user_id Int,
+    goal_id UUID,
+    user_id int,
+    target_amount Float,
+    category varchar,
     action varchar,
-    device_os varchar,
     timestamp timestamp
 );
-
 
 
 
