@@ -25,3 +25,44 @@ FROM
     FROM "events"."service_a_events"
 )
 ORDER BY row_count DESC;
+
+-- ========================================================svs_a=========================================================================================================
+
+select count(*) as row_count from svs_a_events;
+select * from "events"."svs_a_events" limit 10;
+
+-- ========================================================auth=========================================================================================================
+
+select count(*) as row_count from aut_t;
+select * from aut_t limit 10;
+
+-- ========================================================goals=========================================================================================================
+
+select count(*) as row_count from goals_t;
+select * from goals_t limit 10;
+
+-- ========================================================transactions=========================================================================================================
+
+select count(*) as row_count from trxns_t;
+select * from trxns_t limit 10;
+
+SELECT 
+    last_error_time, 
+    name, 
+    last_error_message
+FROM system.errors 
+WHERE last_error_time >= now() - INTERVAL 1 HOUR
+  AND last_error_message != ''
+ORDER BY last_error_time DESC 
+LIMIT 5;
+
+
+
+
+
+
+
+
+
+
+
