@@ -28,7 +28,7 @@ ORDER BY row_count DESC;
 
 -- ========================================================svs_a=========================================================================================================
 
-select count(*) as row_count from svs_a_events;
+select count(*) as row_count from "events"."svs_a_events";
 select * from "events"."svs_a_events" limit 10;
 
 -- ========================================================auth=========================================================================================================
@@ -55,10 +55,6 @@ WHERE last_error_time >= now() - INTERVAL 1 HOUR
   AND last_error_message != ''
 ORDER BY last_error_time DESC 
 LIMIT 5;
-
-
-
-
 
 
 
