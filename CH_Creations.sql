@@ -149,4 +149,3 @@ WHERE JSONExtractString(message, 'payload', 'op') != 'd';
 
 
 
-

@@ -56,6 +56,12 @@ WHERE last_error_time >= now() - INTERVAL 1 HOUR
 ORDER BY last_error_time DESC 
 LIMIT 5;
 
+SELECT name, last_error_message 
+FROM system.errors 
+WHERE last_error_message LIKE '%auth%' OR last_error_message LIKE '%UUID%'
+ORDER BY last_error_time DESC 
+LIMIT 5;
+
 
 
 
